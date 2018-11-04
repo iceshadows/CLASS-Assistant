@@ -1,7 +1,10 @@
 from PIL import Image
-
-infile = "D:\\test\\1.jpg" #导入路径
-outfile = "D:\\test\\2.jpg" #导出路径
-im = Image.open(infile)
-out = im.resize((538,441),Image.ANTIALIAS) #resize image with high-quality
-out.save(outfile)
+import os
+dir = 'D:/Projects/Code/Python3/Image-autoadjust/QDU-ClassAssistant/PHOTO/'
+if os.path.exists(dir):
+    dies = os.listdir(dir)
+    for diec in dies:
+        print(diec)
+        im = Image.open(dir+diec)
+        out = im.resize((538,441),Image.ANTIALIAS) #resize image with high-quality
+        out.save(dir+diec)
